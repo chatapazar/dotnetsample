@@ -8,7 +8,6 @@
 def DEV_PROJECTNAME = "demo-dev2"
 def BUILDCONFIGNAME="sampledotnet2"
 def IMAGE_NAME="sampledotnet2:latest"
-def UATIMAGENAME = "sampledotnet:UATReady-1.0.0"
 
 node('dotnet-22') {
 
@@ -35,7 +34,6 @@ node('dotnet-22') {
 
   stage('Build Image') {
     sh "oc -n $DEV_PROJECTNAME start-build $BUILDCONFIGNAME --from-dir=./bin/Release/netcoreapp2.2/rhel.7-x64/publish --follow"
-    sh "oc -n $DEV_PROJECTNAME tag $DEV_PROJECTNAME/$IMAGE_NAME $UAT_PROJECTNAME/$UATIMAGENAME"
   }
   
 }
