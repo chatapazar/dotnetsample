@@ -5,10 +5,9 @@
 // the getVersionFromPom will attempt to read the version information that it encounter at the
 // first occurance.
 
-def DEV_PROJECTNAME = "demo-dev"
-def UAT_PROJECTNAME = "demo-uat"
-def BUILDCONFIGNAME="sampledotnet"
-def IMAGE_NAME="sampledotnet:latest"
+def DEV_PROJECTNAME = "demo-dev2"
+def BUILDCONFIGNAME="sampledotnet2"
+def IMAGE_NAME="sampledotnet2:latest"
 def UATIMAGENAME = "sampledotnet:UATReady-1.0.0"
 
 node('dotnet-22') {
