@@ -27,7 +27,7 @@ namespace Test.Controllers
         [HttpGet("{id}")]
         public ActionResult<PolicyPackage> Get(int id)
         {
-            C[0] = new PolicyPackage { PackageName  = "Silver Package", PackageNo = "2020080001"};
+            return new PolicyPackage { PackageName  = "Silver Package", PackageNo = "2020080001"};
         }
 
     }
