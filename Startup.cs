@@ -32,6 +32,11 @@ namespace Test
             {
                 c.SwaggerDoc("v1", new Info { Title = "My API", Version = "v1" });
             });
+            
+            services.AddCors(c =>  
+            {  
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());  
+            });  
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,6 +64,8 @@ namespace Test
 
             app.UseHttpsRedirection();
             app.UseMvc();
+            
+            app.UseCors(options => options.AllowAnyOrigin());  
         }
     }
 }
